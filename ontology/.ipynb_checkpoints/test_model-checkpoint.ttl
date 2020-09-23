@@ -1,0 +1,351 @@
+@prefix bf: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isl: <http://inter-space.org/learning_model#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://inter-space.org/learning_model> a owl:Ontology ;
+    owl:imports mls:,
+        <https://brickschema.org/schema/1.0.3/Brick>,
+        <https://brickschema.org/schema/1.0.3/BrickFrame>,
+        <https://brickschema.org/schema/1.0.3/BrickTag>,
+        <https://brickschema.org/schema/1.0.3/BrickUse> .
+
+<http://inter-space.org/learning_model#/ahus/1> a brick:AHU ;
+    bf:Feeds <http://inter-space.org/learning_model#/vavs/1>,
+        <http://inter-space.org/learning_model#/vavs/2>,
+        <http://inter-space.org/learning_model#/vavs/3> .
+
+<http://inter-space.org/learning_model#/buildings/1> a brick:Building ;
+    bf:Contains <http://inter-space.org/learning_model#/rooms/1>,
+        <http://inter-space.org/learning_model#/rooms/2>,
+        <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/damper_sensors/1> a brick:VAV_Damper_Position_Sensor ;
+    bf:hasMeasurement isl:vav_room_1.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/1> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/damper_sensors/2> a brick:VAV_Damper_Position_Sensor ;
+    bf:hasMeasurement isl:vav_room_2.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/2> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/damper_sensors/3> a brick:VAV_Damper_Position_Sensor ;
+    bf:hasMeasurement isl:vav_room_3.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/3> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/humidity_sensors/1> a brick:Humidity_Sensor ;
+    bf:hasMeasurement isl:humidity_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/humidity_sensors/2> a brick:Humidity_Sensor ;
+    bf:hasMeasurement isl:humidity_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/humidity_sensors/3> a brick:Humidity_Sensor ;
+    bf:hasMeasurement isl:humidity_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/illuminate_sensors/1> a brick:Illuminance_Sensor ;
+    bf:hasMeasurement isl:illuminance_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/illuminate_sensors/2> a brick:Illuminance_Sensor ;
+    bf:hasMeasurement isl:illuminance_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/illuminate_sensors/3> a brick:Illuminance_Sensor ;
+    bf:hasMeasurement isl:illuminance_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/occ_sensors/1> a brick:Occupancy_Sensor ;
+    bf:hasMeasurement isl:occupant_count_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/occ_sensors/2> a brick:Occupancy_Sensor ;
+    bf:hasMeasurement isl:occupant_count_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/occ_sensors/3> a brick:Occupancy_Sensor ;
+    bf:hasMeasurement isl:occupant_count_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/temperature_sensors/1> a brick:Temperature_Sensor ;
+    bf:hasMeasurement isl:temperature_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/temperature_sensors/2> a brick:Temperature_Sensor ;
+    bf:hasMeasurement isl:temperature_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/temperature_sensors/3> a brick:Temperature_Sensor ;
+    bf:hasMeasurement isl:temperature_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+isl:hasArea a owl:DatatypeProperty ;
+    rdfs:label "Area size in square meters" ;
+    rdfs:domain brick:Room .
+
+isl:hasCapacity a owl:DatatypeProperty ;
+    rdfs:label "Seating capacity of room" ;
+    rdfs:domain brick:Room .
+
+isl:hasUsage a owl:DatatypeProperty ;
+    rdfs:label "Space usage type" ;
+    rdfs:domain brick:Room .
+
+isl:hasVolume a owl:DatatypeProperty ;
+    rdfs:label "Volume in cubic meters" ;
+    rdfs:domain brick:Room .
+
+isl:room1_run a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:keras_implementation ;
+    mls:hasInput isl:room1_dataset ;
+    mls:hasOutput isl:room1_model,
+        isl:room1_modelEvaluation ;
+    mls:realizes isl:occupancyRegression .
+
+isl:room2_run a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:keras_implementation ;
+    mls:hasInput isl:room2_dataset ;
+    mls:hasOutput isl:room2_model,
+        isl:room2_modelEvaluation ;
+    mls:realizes isl:occupancyRegression .
+
+isl:room3_run a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:keras_implementation ;
+    mls:hasInput isl:room3_dataset ;
+    mls:hasOutput isl:room3_model,
+        isl:room3_modelEvaluation ;
+    mls:realizes isl:occupancyRegression .
+
+isl:run_934bf5d6d74a4c52a23534491a4bb55f a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasOutput isl:evaluation_934bf5d6d74a4c52a23534491a4bb55f,
+        isl:model_934bf5d6d74a4c52a23534491a4bb55f ;
+    mls:realizes isl: .
+
+isl:tensorFlow a mls:Software ;
+    mls:hasPart isl:keras_implementation .
+
+<http://inter-space.org/learning_model#/co2_sensors/1> a brick:CO2_Sensor ;
+    bf:hasMeasurement isl:co2_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/co2_sensors/2> a brick:CO2_Sensor ;
+    bf:hasMeasurement isl:co2_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/co2_sensors/3> a brick:CO2_Sensor ;
+    bf:hasMeasurement isl:co2_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+isl:evaluation_934bf5d6d74a4c52a23534491a4bb55f a mls:ModelEvaluation ;
+    mls:specifiedBy isl:mae_934bf5d6d74a4c52a23534491a4bb55f,
+        isl:mse_934bf5d6d74a4c52a23534491a4bb55f .
+
+isl:mae_934bf5d6d74a4c52a23534491a4bb55f a mls:MeanAbsoluteError ;
+    mls:hasValue "4.612265"^^xsd:float .
+
+isl:model_934bf5d6d74a4c52a23534491a4bb55f a mls:Model ;
+    dcterms:identifier "http://inter-space.org/learning_model/934bf5d6d74a4c52a23534491a4bb55f.h5" .
+
+isl:mse_934bf5d6d74a4c52a23534491a4bb55f a mls:MeanSquaredError ;
+    mls:hasValue "36.059017"^^xsd:float .
+
+isl:room1_co2 a mls:Feature,
+        brick:CO2_Level ;
+    rdfs:label "Room1 CO2 Level" ;
+    mls:hasQuality isl:room1_co2_max,
+        isl:room1_co2_mean,
+        isl:room1_co2_min,
+        isl:room1_co2_std ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/1> .
+
+isl:room1_co2_max a mls:MaxValue ;
+    mls:hasValue "992.81"^^xsd:float .
+
+isl:room1_co2_mean a mls:MeanValue ;
+    mls:hasValue "645.1"^^xsd:float .
+
+isl:room1_co2_min a mls:MinValue ;
+    mls:hasValue "450.61"^^xsd:float .
+
+isl:room1_co2_std a mls:StdValue ;
+    mls:hasValue "130.88"^^xsd:float .
+
+isl:room1_dataset a mls:Dataset ;
+    mls:hasPart isl:room1_co2,
+        isl:room1_occupancy ;
+    mls:hasQuality isl:room1_numberOfInstances .
+
+isl:room1_model a mls:Model ;
+    dcterms:identifier "http://inter-space.org/learning_model/room1_occupancy_model.h5" .
+
+isl:room1_modelEvaluation a mls:ModelEvaluation ;
+    mls:specifiedBy isl:room1_model_mae,
+        isl:room1_model_mse .
+
+isl:room1_model_mae a mls:MeanAbsoluteError ;
+    mls:hasValue "9.26"^^xsd:float .
+
+isl:room1_model_mse a mls:MeanSquaredError ;
+    mls:hasValue "156.95"^^xsd:float .
+
+isl:room1_numberOfInstances a mls:DatasetCharacteristic ;
+    mls:hasValue "792"^^xsd:long .
+
+isl:room1_occupancy a mls:Feature,
+        brick:Occupancy .
+
+isl:room2_co2 a mls:Feature,
+        brick:CO2_Level ;
+    rdfs:label "Room2 CO2 Level" ;
+    mls:hasQuality isl:room2_co2_max,
+        isl:room2_co2_mean,
+        isl:room2_co2_min,
+        isl:room2_co2_std ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/2> .
+
+isl:room2_co2_max a mls:MaxValue ;
+    mls:hasValue "1133.97"^^xsd:float .
+
+isl:room2_co2_mean a mls:MeanValue ;
+    mls:hasValue "553.22"^^xsd:float .
+
+isl:room2_co2_min a mls:MinValue ;
+    mls:hasValue "423.49"^^xsd:float .
+
+isl:room2_co2_std a mls:StdValue ;
+    mls:hasValue "95.96"^^xsd:float .
+
+isl:room2_dataset a mls:Dataset ;
+    mls:hasPart isl:room2_co2,
+        isl:room2_occupancy ;
+    mls:hasQuality isl:room2_numberOfInstances .
+
+isl:room2_model a mls:Model ;
+    dcterms:identifier "http://inter-space.org/learning_model/room1_occupancy_model.h5" .
+
+isl:room2_modelEvaluation a mls:ModelEvaluation ;
+    mls:specifiedBy isl:room2_model_mae,
+        isl:room2_model_mse .
+
+isl:room2_model_mae a mls:MeanAbsoluteError ;
+    mls:hasValue "4.89"^^xsd:float .
+
+isl:room2_model_mse a mls:MeanSquaredError ;
+    mls:hasValue "49.89"^^xsd:float .
+
+isl:room2_numberOfInstances a mls:DatasetCharacteristic ;
+    mls:hasValue "792"^^xsd:long .
+
+isl:room2_occupancy a mls:Feature,
+        brick:Occupancy .
+
+isl:room3_co2 a mls:Feature,
+        brick:CO2_Level ;
+    rdfs:label "Room3 CO2 Level" ;
+    mls:hasQuality isl:room3_co2_max,
+        isl:room3_co2_mean,
+        isl:room3_co2_min,
+        isl:room3_co2_std ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/3> .
+
+isl:room3_co2_max a mls:MaxValue ;
+    mls:hasValue "1122.07"^^xsd:float .
+
+isl:room3_co2_mean a mls:MeanValue ;
+    mls:hasValue "606.99"^^xsd:float .
+
+isl:room3_co2_min a mls:MinValue ;
+    mls:hasValue "410.78"^^xsd:float .
+
+isl:room3_co2_std a mls:StdValue ;
+    mls:hasValue "117.11"^^xsd:float .
+
+isl:room3_dataset a mls:Dataset ;
+    mls:hasPart isl:room3_co2,
+        isl:room3_occupancy ;
+    mls:hasQuality isl:room3_numberOfInstances .
+
+isl:room3_model a mls:Model ;
+    dcterms:identifier "http://inter-space.org/learning_model/room1_occupancy_model.h5" .
+
+isl:room3_modelEvaluation a mls:ModelEvaluation ;
+    mls:specifiedBy isl:room3_model_mae,
+        isl:room3_model_mse .
+
+isl:room3_model_mae a mls:MeanAbsoluteError ;
+    mls:hasValue "6.61"^^xsd:float .
+
+isl:room3_model_mse a mls:MeanSquaredError ;
+    mls:hasValue "82.63"^^xsd:float .
+
+isl:room3_numberOfInstances a mls:DatasetCharacteristic ;
+    mls:hasValue "792"^^xsd:long .
+
+isl:room3_occupancy a mls:Feature,
+        brick:Occupancy .
+
+<http://inter-space.org/learning_model#/vavs/1> a brick:VAV ;
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/vavs/2> a brick:VAV ;
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/vavs/3> a brick:VAV ;
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/3> .
+
+mls:MaxValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+mls:MeanValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+mls:MinValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+mls:StdValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+isl:keras_implementation a mls:Implementation ;
+    mls:implements isl:occupancyRegression .
+
+isl:occupancyRegression a mls:Algorithm .
+
+isl:occupancy_task a mls:Task .
+
+mls:MeanAbsoluteError a owl:Class ;
+    rdfs:subClassOf mls:EvaluationMeasure .
+
+mls:MeanSquaredError a owl:Class ;
+    rdfs:subClassOf mls:EvaluationMeasure .
+
+<http://inter-space.org/learning_model#/rooms/1> a brick:Room ;
+    isl:hasArea "139.0"^^xsd:float ;
+    isl:hasCapacity "84"^^xsd:int ;
+    isl:hasUsage "lecture"^^xsd:string ;
+    isl:hasVolume "461.48"^^xsd:float .
+
+<http://inter-space.org/learning_model#/rooms/2> a brick:Room ;
+    isl:hasArea "125.0"^^xsd:float ;
+    isl:hasCapacity "32"^^xsd:int ;
+    isl:hasUsage "study"^^xsd:string ;
+    isl:hasVolume "418.75"^^xsd:float .
+
+<http://inter-space.org/learning_model#/rooms/3> a brick:Room ;
+    isl:hasArea "125.0"^^xsd:float ;
+    isl:hasCapacity "32"^^xsd:int ;
+    isl:hasUsage "study"^^xsd:string ;
+    isl:hasVolume "418.75"^^xsd:float .
+
