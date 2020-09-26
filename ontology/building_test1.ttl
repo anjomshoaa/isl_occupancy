@@ -1,0 +1,458 @@
+# baseURI: http://inter-space.org/learning_model
+# imports: http://www.w3.org/ns/mls#
+# imports: https://brickschema.org/schema/1.0.3/Brick
+# imports: https://brickschema.org/schema/1.0.3/BrickFrame
+# imports: https://brickschema.org/schema/1.0.3/BrickTag
+# imports: https://brickschema.org/schema/1.0.3/BrickUse
+
+@prefix : <http://inter-space.org/learning_model#> .
+@prefix BrickUse: <https://brickschema.org/schema/1.0.3/BrickUse#> .
+@prefix bf: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
+@prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
+@prefix btag: <https://brickschema.org/schema/1.0.3/BrickTag#> .
+@prefix isl: <http://inter-space.org/learning_model#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://inter-space.org/learning_model>
+  rdf:type owl:Ontology ;
+  owl:imports mls: ;
+  owl:imports <https://brickschema.org/schema/1.0.3/Brick> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickFrame> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickTag> ;
+  owl:imports <https://brickschema.org/schema/1.0.3/BrickUse> ;
+.
+
+<http://inter-space.org/learning_model#/ahus/1> a brick:AHU ;
+    bf:Feeds <http://inter-space.org/learning_model#/vavs/1>,
+        <http://inter-space.org/learning_model#/vavs/2>,
+        <http://inter-space.org/learning_model#/vavs/3> .
+
+<http://inter-space.org/learning_model#/buildings/1> a brick:Building ;
+    bf:Contains <http://inter-space.org/learning_model#/rooms/1>,
+        <http://inter-space.org/learning_model#/rooms/2>,
+        <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/damper_sensors/1> a brick:VAV_Damper_Position_Sensor ;
+    bf:hasMeasurement isl:vav_room_1.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/1> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/damper_sensors/2> a brick:VAV_Damper_Position_Sensor ;
+    bf:hasMeasurement isl:vav_room_2.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/2> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/damper_sensors/3> a brick:VAV_Damper_Position_Sensor ;
+    bf:hasMeasurement isl:vav_room_3.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/3> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/humidity_sensors/1> a brick:Humidity_Sensor ;
+    bf:hasMeasurement isl:humidity_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/humidity_sensors/2> a brick:Humidity_Sensor ;
+    bf:hasMeasurement isl:humidity_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/humidity_sensors/3> a brick:Humidity_Sensor ;
+    bf:hasMeasurement isl:humidity_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/illuminate_sensors/1> a brick:Illuminance_Sensor ;
+    bf:hasMeasurement isl:illuminance_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/illuminate_sensors/2> a brick:Illuminance_Sensor ;
+    bf:hasMeasurement isl:illuminance_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/illuminate_sensors/3> a brick:Illuminance_Sensor ;
+    bf:hasMeasurement isl:illuminance_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/temperature_sensors/1> a brick:Temperature_Sensor ;
+    bf:hasMeasurement isl:temperature_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/temperature_sensors/2> a brick:Temperature_Sensor ;
+    bf:hasMeasurement isl:temperature_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/temperature_sensors/3> a brick:Temperature_Sensor ;
+    bf:hasMeasurement isl:temperature_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+isl:column_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:Column ;
+    mls:hasQuality isl:max_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:mean_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:min_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:std_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test ;
+    mls:specifiedBy isl:feature_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5 .
+
+isl:column_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:Column ;
+    mls:hasQuality isl:max_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:mean_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:min_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:std_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train ;
+    mls:specifiedBy isl:feature_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5 .
+
+isl:column_co2_ds_5d831f903e45497d96745593e8569581_test a mls:Column ;
+    mls:hasQuality isl:max_co2_ds_5d831f903e45497d96745593e8569581_test,
+        isl:mean_co2_ds_5d831f903e45497d96745593e8569581_test,
+        isl:min_co2_ds_5d831f903e45497d96745593e8569581_test,
+        isl:std_co2_ds_5d831f903e45497d96745593e8569581_test ;
+    mls:specifiedBy isl:feature_co2_ds_5d831f903e45497d96745593e8569581 .
+
+isl:column_co2_ds_5d831f903e45497d96745593e8569581_train a mls:Column ;
+    mls:hasQuality isl:max_co2_ds_5d831f903e45497d96745593e8569581_train,
+        isl:mean_co2_ds_5d831f903e45497d96745593e8569581_train,
+        isl:min_co2_ds_5d831f903e45497d96745593e8569581_train,
+        isl:std_co2_ds_5d831f903e45497d96745593e8569581_train ;
+    mls:specifiedBy isl:feature_co2_ds_5d831f903e45497d96745593e8569581 .
+
+isl:column_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:Column ;
+    mls:hasQuality isl:max_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:mean_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:min_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:std_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test ;
+    mls:specifiedBy isl:feature_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72 .
+
+isl:column_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:Column ;
+    mls:hasQuality isl:max_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:mean_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:min_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:std_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train ;
+    mls:specifiedBy isl:feature_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72 .
+
+isl:column_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:Column ;
+    mls:hasQuality isl:max_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:mean_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:min_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:std_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test ;
+    mls:specifiedBy isl:feature_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5 .
+
+isl:column_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:Column ;
+    mls:hasQuality isl:max_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:mean_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:min_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:std_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train ;
+    mls:specifiedBy isl:feature_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5 .
+
+isl:column_occupancy_ds_5d831f903e45497d96745593e8569581_test a mls:Column ;
+    mls:hasQuality isl:max_occupancy_ds_5d831f903e45497d96745593e8569581_test,
+        isl:mean_occupancy_ds_5d831f903e45497d96745593e8569581_test,
+        isl:min_occupancy_ds_5d831f903e45497d96745593e8569581_test,
+        isl:std_occupancy_ds_5d831f903e45497d96745593e8569581_test ;
+    mls:specifiedBy isl:feature_occupancy_ds_5d831f903e45497d96745593e8569581 .
+
+isl:column_occupancy_ds_5d831f903e45497d96745593e8569581_train a mls:Column ;
+    mls:hasQuality isl:max_occupancy_ds_5d831f903e45497d96745593e8569581_train,
+        isl:mean_occupancy_ds_5d831f903e45497d96745593e8569581_train,
+        isl:min_occupancy_ds_5d831f903e45497d96745593e8569581_train,
+        isl:std_occupancy_ds_5d831f903e45497d96745593e8569581_train ;
+    mls:specifiedBy isl:feature_occupancy_ds_5d831f903e45497d96745593e8569581 .
+
+isl:column_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:Column ;
+    mls:hasQuality isl:max_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:mean_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:min_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:std_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test ;
+    mls:specifiedBy isl:feature_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72 .
+
+isl:column_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:Column ;
+    mls:hasQuality isl:max_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:mean_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:min_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:std_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train ;
+    mls:specifiedBy isl:feature_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72 .
+
+isl:ds_3e52aaa82e4d4a029f61a44ebe836bc5 a mls:Dataset ;
+    mls:hasPart isl:ds_3e52aaa82e4d4a029f61a44ebe836bc5_test,
+        isl:ds_3e52aaa82e4d4a029f61a44ebe836bc5_train,
+        isl:feature_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5,
+        isl:feature_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5 .
+
+isl:ds_5d831f903e45497d96745593e8569581 a mls:Dataset ;
+    mls:hasPart isl:ds_5d831f903e45497d96745593e8569581_test,
+        isl:ds_5d831f903e45497d96745593e8569581_train,
+        isl:feature_co2_ds_5d831f903e45497d96745593e8569581,
+        isl:feature_occupancy_ds_5d831f903e45497d96745593e8569581 .
+
+isl:ds_f18327def3424ae0bfaa84ffd2ba2d72 a mls:Dataset ;
+    mls:hasPart isl:ds_f18327def3424ae0bfaa84ffd2ba2d72_test,
+        isl:ds_f18327def3424ae0bfaa84ffd2ba2d72_train,
+        isl:feature_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72,
+        isl:feature_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72 .
+
+isl:hasArea a owl:DatatypeProperty ;
+    rdfs:label "Area size in square meters" ;
+    rdfs:domain brick:Room .
+
+isl:hasCapacity a owl:DatatypeProperty ;
+    rdfs:label "Seating capacity of room" ;
+    rdfs:domain brick:Room .
+
+isl:hasUsage a owl:DatatypeProperty ;
+    rdfs:label "Space usage type" ;
+    rdfs:domain brick:Room .
+
+isl:hasVolume a owl:DatatypeProperty ;
+    rdfs:label "Volume in cubic meters" ;
+    rdfs:domain brick:Room .
+
+<http://inter-space.org/learning_model#/co2_sensors/1> a brick:CO2_Sensor ;
+    bf:hasMeasurement isl:co2_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/co2_sensors/2> a brick:CO2_Sensor ;
+    bf:hasMeasurement isl:co2_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/co2_sensors/3> a brick:CO2_Sensor ;
+    bf:hasMeasurement isl:co2_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/occ_sensors/1> a brick:Occupancy_Sensor ;
+    bf:hasMeasurement isl:occupant_count_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/occ_sensors/2> a brick:Occupancy_Sensor ;
+    bf:hasMeasurement isl:occupant_count_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/occ_sensors/3> a brick:Occupancy_Sensor ;
+    bf:hasMeasurement isl:occupant_count_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+isl:ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:TestDataset .
+
+isl:ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:TrainDataset .
+
+isl:ds_5d831f903e45497d96745593e8569581_test a mls:TestDataset .
+
+isl:ds_5d831f903e45497d96745593e8569581_train a mls:TrainDataset .
+
+isl:ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:TestDataset .
+
+isl:ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:TrainDataset .
+
+isl:max_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:MaxValue ;
+    mls:hasValue "1122.069374593099"^^xsd:float .
+
+isl:max_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:MaxValue ;
+    mls:hasValue "1095.936014811198"^^xsd:float .
+
+isl:max_co2_ds_5d831f903e45497d96745593e8569581_test a mls:MaxValue ;
+    mls:hasValue "892.4800028483073"^^xsd:float .
+
+isl:max_co2_ds_5d831f903e45497d96745593e8569581_train a mls:MaxValue ;
+    mls:hasValue "992.8106770833333"^^xsd:float .
+
+isl:max_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:MaxValue ;
+    mls:hasValue "907.0293253580729"^^xsd:float .
+
+isl:max_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:MaxValue ;
+    mls:hasValue "1133.9733357747396"^^xsd:float .
+
+isl:max_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:MaxValue ;
+    mls:hasValue "64.0"^^xsd:float .
+
+isl:max_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:MaxValue ;
+    mls:hasValue "63.0"^^xsd:float .
+
+isl:max_occupancy_ds_5d831f903e45497d96745593e8569581_test a mls:MaxValue ;
+    mls:hasValue "74.0"^^xsd:float .
+
+isl:max_occupancy_ds_5d831f903e45497d96745593e8569581_train a mls:MaxValue ;
+    mls:hasValue "78.0"^^xsd:float .
+
+isl:max_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:MaxValue ;
+    mls:hasValue "51.0"^^xsd:float .
+
+isl:max_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:MaxValue ;
+    mls:hasValue "55.0"^^xsd:float .
+
+isl:mean_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:MeanValue ;
+    mls:hasValue "612.809452021474"^^xsd:float .
+
+isl:mean_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:MeanValue ;
+    mls:hasValue "605.5390796761659"^^xsd:float .
+
+isl:mean_co2_ds_5d831f903e45497d96745593e8569581_test a mls:MeanValue ;
+    mls:hasValue "639.5211488039685"^^xsd:float .
+
+isl:mean_co2_ds_5d831f903e45497d96745593e8569581_train a mls:MeanValue ;
+    mls:hasValue "646.489927050794"^^xsd:float .
+
+isl:mean_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:MeanValue ;
+    mls:hasValue "556.9161870256255"^^xsd:float .
+
+isl:mean_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:MeanValue ;
+    mls:hasValue "552.2985664808913"^^xsd:float .
+
+isl:mean_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:MeanValue ;
+    mls:hasValue "9.753164556962025"^^xsd:float .
+
+isl:mean_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:MeanValue ;
+    mls:hasValue "9.146687697160884"^^xsd:float .
+
+isl:mean_occupancy_ds_5d831f903e45497d96745593e8569581_test a mls:MeanValue ;
+    mls:hasValue "19.360759493670887"^^xsd:float .
+
+isl:mean_occupancy_ds_5d831f903e45497d96745593e8569581_train a mls:MeanValue ;
+    mls:hasValue "20.681388012618296"^^xsd:float .
+
+isl:mean_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:MeanValue ;
+    mls:hasValue "9.430379746835444"^^xsd:float .
+
+isl:mean_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:MeanValue ;
+    mls:hasValue "9.280757097791797"^^xsd:float .
+
+isl:min_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:MinValue ;
+    mls:hasValue "433.9306630452474"^^xsd:float .
+
+isl:min_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:MinValue ;
+    mls:hasValue "410.78400065104165"^^xsd:float .
+
+isl:min_co2_ds_5d831f903e45497d96745593e8569581_test a mls:MinValue ;
+    mls:hasValue "458.0586710611979"^^xsd:float .
+
+isl:min_co2_ds_5d831f903e45497d96745593e8569581_train a mls:MinValue ;
+    mls:hasValue "450.61333719889325"^^xsd:float .
+
+isl:min_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:MinValue ;
+    mls:hasValue "425.0560028076172"^^xsd:float .
+
+isl:min_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:MinValue ;
+    mls:hasValue "423.4879994710287"^^xsd:float .
+
+isl:min_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:MinValue ;
+    mls:hasValue "0.0"^^xsd:float .
+
+isl:min_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:MinValue ;
+    mls:hasValue "0.0"^^xsd:float .
+
+isl:min_occupancy_ds_5d831f903e45497d96745593e8569581_test a mls:MinValue ;
+    mls:hasValue "0.0"^^xsd:float .
+
+isl:min_occupancy_ds_5d831f903e45497d96745593e8569581_train a mls:MinValue ;
+    mls:hasValue "0.0"^^xsd:float .
+
+isl:min_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:MinValue ;
+    mls:hasValue "0.0"^^xsd:float .
+
+isl:min_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:MinValue ;
+    mls:hasValue "0.0"^^xsd:float .
+
+isl:std_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:StdValue ;
+    mls:hasValue "118.57013706704247"^^xsd:float .
+
+isl:std_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:StdValue ;
+    mls:hasValue "116.79467628845741"^^xsd:float .
+
+isl:std_co2_ds_5d831f903e45497d96745593e8569581_test a mls:StdValue ;
+    mls:hasValue "121.35980658635133"^^xsd:float .
+
+isl:std_co2_ds_5d831f903e45497d96745593e8569581_train a mls:StdValue ;
+    mls:hasValue "133.20177732545636"^^xsd:float .
+
+isl:std_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:StdValue ;
+    mls:hasValue "91.42007145556612"^^xsd:float .
+
+isl:std_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:StdValue ;
+    mls:hasValue "97.10944071757858"^^xsd:float .
+
+isl:std_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_test a mls:StdValue ;
+    mls:hasValue "9.409093520483635"^^xsd:float .
+
+isl:std_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5_train a mls:StdValue ;
+    mls:hasValue "9.084416986317933"^^xsd:float .
+
+isl:std_occupancy_ds_5d831f903e45497d96745593e8569581_test a mls:StdValue ;
+    mls:hasValue "18.047078686065063"^^xsd:float .
+
+isl:std_occupancy_ds_5d831f903e45497d96745593e8569581_train a mls:StdValue ;
+    mls:hasValue "20.313018120884504"^^xsd:float .
+
+isl:std_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_test a mls:StdValue ;
+    mls:hasValue "7.904982778040434"^^xsd:float .
+
+isl:std_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72_train a mls:StdValue ;
+    mls:hasValue "7.82510494219644"^^xsd:float .
+
+<http://inter-space.org/learning_model#/vavs/1> a brick:VAV ;
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/vavs/2> a brick:VAV ;
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/vavs/3> a brick:VAV ;
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/3> .
+
+isl:feature_co2_ds_3e52aaa82e4d4a029f61a44ebe836bc5 a mls:Feature,
+        brick:CO2_Level ;
+    rdfs:label "Room CO2 Level"^^xsd:string ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/3> .
+
+isl:feature_co2_ds_5d831f903e45497d96745593e8569581 a mls:Feature,
+        brick:CO2_Level ;
+    rdfs:label "Room CO2 Level"^^xsd:string ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/1> .
+
+isl:feature_co2_ds_f18327def3424ae0bfaa84ffd2ba2d72 a mls:Feature,
+        brick:CO2_Level ;
+    rdfs:label "Room CO2 Level"^^xsd:string ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/2> .
+
+isl:feature_occupancy_ds_3e52aaa82e4d4a029f61a44ebe836bc5 a mls:Feature,
+        brick:Occupancy ;
+    rdfs:label "Room Occupancy"^^xsd:string ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/3> .
+
+isl:feature_occupancy_ds_5d831f903e45497d96745593e8569581 a mls:Feature,
+        brick:Occupancy ;
+    rdfs:label "Room Occupancy"^^xsd:string ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/1> .
+
+isl:feature_occupancy_ds_f18327def3424ae0bfaa84ffd2ba2d72 a mls:Feature,
+        brick:Occupancy ;
+    rdfs:label "Room Occupancy"^^xsd:string ;
+    bf:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/2> .
+
+<http://inter-space.org/learning_model#/rooms/1> a brick:Room ;
+    isl:hasArea "139.0"^^xsd:float ;
+    isl:hasCapacity "84"^^xsd:int ;
+    isl:hasUsage "lecture"^^xsd:string ;
+    isl:hasVolume "461.48"^^xsd:float .
+
+<http://inter-space.org/learning_model#/rooms/2> a brick:Room ;
+    isl:hasArea "125.0"^^xsd:float ;
+    isl:hasCapacity "32"^^xsd:int ;
+    isl:hasUsage "study"^^xsd:string ;
+    isl:hasVolume "418.75"^^xsd:float .
+
+<http://inter-space.org/learning_model#/rooms/3> a brick:Room ;
+    isl:hasArea "125.0"^^xsd:float ;
+    isl:hasCapacity "32"^^xsd:int ;
+    isl:hasUsage "study"^^xsd:string ;
+    isl:hasVolume "418.75"^^xsd:float .
+
+mls:MaxValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+mls:MeanValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+mls:MinValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
+mls:StdValue a owl:Class ;
+    rdfs:subClassOf mls:FeatureCharacteristic .
+
