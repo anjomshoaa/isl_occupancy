@@ -1,4 +1,4 @@
-@prefix brickframe: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
+@prefix bf: <https://brickschema.org/schema/1.0.3/BrickFrame#> .
 @prefix brick: <https://brickschema.org/schema/1.0.3/Brick#> .
 @prefix isl: <http://inter-space.org/learning_model#> .
 @prefix mls: <http://www.w3.org/ns/mls#> .
@@ -7,89 +7,89 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://inter-space.org/learning_model#/ahus/1> a brick:AHU ;
-    brickframe:Feeds <http://inter-space.org/learning_model#/vavs/1>,
+    bf:Feeds <http://inter-space.org/learning_model#/vavs/1>,
         <http://inter-space.org/learning_model#/vavs/2>,
         <http://inter-space.org/learning_model#/vavs/3> .
 
 <http://inter-space.org/learning_model#/buildings/1> a brick:Building ;
-    brickframe:Contains <http://inter-space.org/learning_model#/rooms/1>,
+    bf:Contains <http://inter-space.org/learning_model#/rooms/1>,
         <http://inter-space.org/learning_model#/rooms/2>,
         <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/co2_sensors/1> a brick:CO2_Sensor ;
-    brickframe:hasMeasurement isl:co2_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+    bf:hasMeasurement isl:co2_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/co2_sensors/2> a brick:CO2_Sensor ;
-    brickframe:hasMeasurement isl:co2_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+    bf:hasMeasurement isl:co2_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/co2_sensors/3> a brick:CO2_Sensor ;
-    brickframe:hasMeasurement isl:co2_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+    bf:hasMeasurement isl:co2_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/damper_sensors/1> a brick:VAV_Damper_Position_Sensor ;
-    brickframe:hasMeasurement isl:vav_room_1.csv ;
-    brickframe:isPartOf <http://inter-space.org/learning_model#/vavs/1> ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+    bf:hasMeasurement isl:vav_room_1.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/1> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/damper_sensors/2> a brick:VAV_Damper_Position_Sensor ;
-    brickframe:hasMeasurement isl:vav_room_2.csv ;
-    brickframe:isPartOf <http://inter-space.org/learning_model#/vavs/2> ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+    bf:hasMeasurement isl:vav_room_2.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/2> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/damper_sensors/3> a brick:VAV_Damper_Position_Sensor ;
-    brickframe:hasMeasurement isl:vav_room_3.csv ;
-    brickframe:isPartOf <http://inter-space.org/learning_model#/vavs/3> ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+    bf:hasMeasurement isl:vav_room_3.csv ;
+    bf:isPartOf <http://inter-space.org/learning_model#/vavs/3> ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/humidity_sensors/1> a brick:Humidity_Sensor ;
-    brickframe:hasMeasurement isl:humidity_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+    bf:hasMeasurement isl:humidity_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/humidity_sensors/2> a brick:Humidity_Sensor ;
-    brickframe:hasMeasurement isl:humidity_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+    bf:hasMeasurement isl:humidity_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/humidity_sensors/3> a brick:Humidity_Sensor ;
-    brickframe:hasMeasurement isl:humidity_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+    bf:hasMeasurement isl:humidity_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/illuminate_sensors/1> a brick:Illuminance_Sensor ;
-    brickframe:hasMeasurement isl:illuminance_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+    bf:hasMeasurement isl:illuminance_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/illuminate_sensors/2> a brick:Illuminance_Sensor ;
-    brickframe:hasMeasurement isl:illuminance_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+    bf:hasMeasurement isl:illuminance_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/illuminate_sensors/3> a brick:Illuminance_Sensor ;
-    brickframe:hasMeasurement isl:illuminance_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+    bf:hasMeasurement isl:illuminance_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/occ_sensors/1> a brick:Occupancy_Sensor ;
-    brickframe:hasMeasurement isl:occupant_count_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+    bf:hasMeasurement isl:occupant_count_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/occ_sensors/2> a brick:Occupancy_Sensor ;
-    brickframe:hasMeasurement isl:occupant_count_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+    bf:hasMeasurement isl:occupant_count_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/occ_sensors/3> a brick:Occupancy_Sensor ;
-    brickframe:hasMeasurement isl:occupant_count_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+    bf:hasMeasurement isl:occupant_count_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/temperature_sensors/1> a brick:Temperature_Sensor ;
-    brickframe:hasMeasurement isl:temperature_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+    bf:hasMeasurement isl:temperature_room_1.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/temperature_sensors/2> a brick:Temperature_Sensor ;
-    brickframe:hasMeasurement isl:temperature_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+    bf:hasMeasurement isl:temperature_room_2.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/temperature_sensors/3> a brick:Temperature_Sensor ;
-    brickframe:hasMeasurement isl:temperature_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+    bf:hasMeasurement isl:temperature_room_3.csv ;
+    bf:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 isl:hasArea a owl:DatatypeProperty ;
     rdfs:label "Area size in square meters" ;
@@ -120,13 +120,13 @@ mls:StdValue a owl:Class ;
     rdfs:subClassOf mls:FeatureCharacteristic .
 
 <http://inter-space.org/learning_model#/vavs/1> a brick:VAV ;
-    brickframe:Feeds <http://inter-space.org/learning_model#/rooms/1> .
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/1> .
 
 <http://inter-space.org/learning_model#/vavs/2> a brick:VAV ;
-    brickframe:Feeds <http://inter-space.org/learning_model#/rooms/2> .
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/2> .
 
 <http://inter-space.org/learning_model#/vavs/3> a brick:VAV ;
-    brickframe:Feeds <http://inter-space.org/learning_model#/rooms/3> .
+    bf:Feeds <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/rooms/1> a brick:Room ;
     isl:hasArea "139"^^xsd:float ;
@@ -146,16 +146,3 @@ mls:StdValue a owl:Class ;
     isl:hasUsage "study"^^xsd:string ;
     isl:hasVolume "418.75"^^xsd:float .
 
-
-
-isl:occupancy_task a mls:Task .
-
-brick:CO2_Sensor rdfs:subClassOf brick:Sensor  .
-brick:Humidity_Sensor rdfs:subClassOf brick:Sensor  .
-brick:Occupancy_Sensor rdfs:subClassOf brick:Sensor  .
-brick:Temperature_Sensor rdfs:subClassOf brick:Sensor  .
-
-brick:CO2_Sensor rdfs:label "CO2 Sensor"  .
-brick:Humidity_Sensor rdfs:label "Humidity Sensor"  .
-brick:Occupancy_Sensor rdfs:label "Occupancy Sensor"  .
-brick:Temperature_Sensor rdfs:label "Temperature Sensor"  .
