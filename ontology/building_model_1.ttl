@@ -17,14 +17,6 @@
         <http://inter-space.org/learning_model#/rooms/2>,
         <http://inter-space.org/learning_model#/rooms/3> .
 
-<http://inter-space.org/learning_model#/co2_sensors/2> a brick:CO2_Sensor ;
-    brickframe:hasMeasurement isl:co2_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
-
-<http://inter-space.org/learning_model#/co2_sensors/3> a brick:CO2_Sensor ;
-    brickframe:hasMeasurement isl:co2_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
-
 <http://inter-space.org/learning_model#/damper_sensors/1> a brick:VAV_Damper_Position_Sensor ;
     brickframe:hasMeasurement isl:vav_room_1.csv ;
     brickframe:isPartOf <http://inter-space.org/learning_model#/vavs/1> ;
@@ -62,14 +54,6 @@
 
 <http://inter-space.org/learning_model#/illuminate_sensors/3> a brick:Illuminance_Sensor ;
     brickframe:hasMeasurement isl:illuminance_room_3.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
-
-<http://inter-space.org/learning_model#/occ_sensors/2> a brick:Occupancy_Sensor ;
-    brickframe:hasMeasurement isl:occupant_count_room_2.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
-
-<http://inter-space.org/learning_model#/occ_sensors/3> a brick:Occupancy_Sensor ;
-    brickframe:hasMeasurement isl:occupant_count_room_3.csv ;
     brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#/temperature_sensors/1> a brick:Temperature_Sensor ;
@@ -247,117 +231,137 @@ isl:hasVolume a owl:DatatypeProperty ;
     rdfs:label "Volume in cubic meters" ;
     rdfs:domain brick:Room .
 
-isl:run_11f8a213c4c84df489e7f91531fcdb41 mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/train> ;
-    mls:hasOutput isl:model_0754017c705548d490065f71ac4364ee ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_204d218c823346b9a61d0b0803717a26 a mls:Run ;
+isl:run_05fdbc4a0be247eca732097b9337f147 a mls:Run ;
     mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/test>,
-        isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_204d218c823346b9a61d0b0803717a26/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_215d79b181fe46189837d83e663392d6 a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
-        isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_215d79b181fe46189837d83e663392d6/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_33c8c6b8ddfe42c6b5bb9a76259a2d96 mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/finetune> ;
-    mls:hasOutput isl:model_b4895793546a4048b0656859e1430349 ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_40e35dbe65fc49e88ecfd7ce6d47761c a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
-        isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_40e35dbe65fc49e88ecfd7ce6d47761c/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_4864dcade9064ee4a3d55b11e8c3c77c a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/test>,
-        isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_4864dcade9064ee4a3d55b11e8c3c77c/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_501e44bd6e4e418f9d302cfc2d8c1429 a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
-        isl:model_0754017c705548d490065f71ac4364ee ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_501e44bd6e4e418f9d302cfc2d8c1429/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_76f2c2e26b7643eeb557ecfdbedb5694 a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
-        isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_76f2c2e26b7643eeb557ecfdbedb5694/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_81a2068ffb1f4379bf45fd7d2212cc93 a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
-        isl:model_b4895793546a4048b0656859e1430349 ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_81a2068ffb1f4379bf45fd7d2212cc93/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_81f4f46e00a44afe9489930c721bea5f mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/train> ;
-    mls:hasOutput isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_a3ad8fefbfb348e2a48b2abe4847e7d3 a mls:Run ;
-    mls:achieves isl:occupancy_task ;
-    mls:executes isl:tensorflow ;
-    mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/test>,
-        isl:model_0754017c705548d490065f71ac4364ee ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_a3ad8fefbfb348e2a48b2abe4847e7d3/eval> ;
-    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
-
-isl:run_cac206fd28b94eb3a40819b6d853953f mls:achieves isl:occupancy_task ;
     mls:executes isl:tensorflow ;
     mls:hasInput <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/train> ;
     mls:hasOutput isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
     mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
 
-isl:run_cc7821e500334aa2bb9978d8b079fe22 a mls:Run ;
+isl:run_139667b5f2484dce9732eb52ca958ae8 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
+        isl:model_0754017c705548d490065f71ac4364ee ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_139667b5f2484dce9732eb52ca958ae8/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_465b3c1d6be542cd8c85b14b498e97a8 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/finetune> ;
+    mls:hasOutput isl:model_b4895793546a4048b0656859e1430349 ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_49c34b42db1d4e098d46fc6cd790da84 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
+        isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_49c34b42db1d4e098d46fc6cd790da84/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_4aac1d3e65874dd2935288899c695099 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
+        isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_4aac1d3e65874dd2935288899c695099/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_5144447ec848483688b37b16d91d8c2d a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/train> ;
+    mls:hasOutput isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_7be65ff944404a38be97030b6c8c4df7 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/test>,
+        isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_7be65ff944404a38be97030b6c8c4df7/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_842302134b3147a7b92f50838fdb3d3a a mls:Run ;
     mls:achieves isl:occupancy_task ;
     mls:executes isl:tensorflow ;
     mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/test>,
-        isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_cc7821e500334aa2bb9978d8b079fe22/eval> ;
+        isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_842302134b3147a7b92f50838fdb3d3a/eval> ;
     mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
 
-isl:run_e471b669a1af4e84ae56549ae4b8ba3a a mls:Run ;
+isl:run_bb6331b7c9eb414aa5de41fcb9be3196 a mls:Run ;
     mls:achieves isl:occupancy_task ;
     mls:executes isl:tensorflow ;
     mls:hasInput <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/test>,
         isl:model_0754017c705548d490065f71ac4364ee ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_e471b669a1af4e84ae56549ae4b8ba3a/eval> ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_bb6331b7c9eb414aa5de41fcb9be3196/eval> ;
     mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
 
-isl:run_f26b6f67f85946959a990e84cfe1ceca a mls:Run ;
+isl:run_cf4055c34d284efcb0597d5f3f22df83 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test>,
+        isl:model_b4895793546a4048b0656859e1430349 ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_cf4055c34d284efcb0597d5f3f22df83/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_db514276c28b45899ebab1da2d7eedb7 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/test>,
+        isl:model_0754017c705548d490065f71ac4364ee ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_db514276c28b45899ebab1da2d7eedb7/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_e7696ac0acbc4bfea8eea5c6457f3f94 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/test>,
+        isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_e7696ac0acbc4bfea8eea5c6457f3f94/eval> ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_ee0f962e31014329a40c0dee0563df46 a mls:Run ;
     mls:achieves isl:occupancy_task ;
     mls:executes isl:tensorflow ;
     mls:hasInput <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/test>,
         isl:model_cac90a7b1bf147bda94625edc5b339f7 ;
-    mls:hasOutput <http://inter-space.org/learning_model#run_f26b6f67f85946959a990e84cfe1ceca/eval> ;
+    mls:hasOutput <http://inter-space.org/learning_model#run_ee0f962e31014329a40c0dee0563df46/eval> ;
     mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+isl:run_f94db76e019041daa9055cce2ee61778 a mls:Run ;
+    mls:achieves isl:occupancy_task ;
+    mls:executes isl:tensorflow ;
+    mls:hasInput <http://inter-space.org/learning_model#b782a3a359e54fcebbd57d590665bc39/train> ;
+    mls:hasOutput isl:model_0754017c705548d490065f71ac4364ee ;
+    mls:realizes "tensorflow.python.keras.engine.sequential.Sequential" .
+
+<http://inter-space.org/learning_model#/co2_sensors/1> a brick:CO2_Sensor ;
+    brickframe:hasMeasurement isl:co2_room_1.csv ;
+    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/co2_sensors/2> a brick:CO2_Sensor ;
+    brickframe:hasMeasurement isl:co2_room_2.csv ;
+    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/co2_sensors/3> a brick:CO2_Sensor ;
+    brickframe:hasMeasurement isl:co2_room_3.csv ;
+    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
+
+<http://inter-space.org/learning_model#/occ_sensors/1> a brick:Occupancy_Sensor ;
+    brickframe:hasMeasurement isl:occupant_count_room_1.csv ;
+    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
+
+<http://inter-space.org/learning_model#/occ_sensors/2> a brick:Occupancy_Sensor ;
+    brickframe:hasMeasurement isl:occupant_count_room_2.csv ;
+    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/2> .
+
+<http://inter-space.org/learning_model#/occ_sensors/3> a brick:Occupancy_Sensor ;
+    brickframe:hasMeasurement isl:occupant_count_room_3.csv ;
+    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/3> .
 
 <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/finetune> a mls:FineTuningDataset ;
     mls:hasQuality <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/finetune/count> .
@@ -608,114 +612,104 @@ isl:run_f26b6f67f85946959a990e84cfe1ceca a mls:Run ;
 <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/train/occupancy/std> a mls:StdValue ;
     mls:hasValue "9.237493526384311"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_204d218c823346b9a61d0b0803717a26/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_204d218c823346b9a61d0b0803717a26/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_204d218c823346b9a61d0b0803717a26/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_139667b5f2484dce9732eb52ca958ae8/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_139667b5f2484dce9732eb52ca958ae8/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_139667b5f2484dce9732eb52ca958ae8/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_204d218c823346b9a61d0b0803717a26/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "3.7022125720977783"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_204d218c823346b9a61d0b0803717a26/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "21.834674835205078"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_215d79b181fe46189837d83e663392d6/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_215d79b181fe46189837d83e663392d6/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_215d79b181fe46189837d83e663392d6/eval/mean_squared_error> .
-
-<http://inter-space.org/learning_model#run_215d79b181fe46189837d83e663392d6/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "6.6768574714660645"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_215d79b181fe46189837d83e663392d6/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "65.63717651367188"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_40e35dbe65fc49e88ecfd7ce6d47761c/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_40e35dbe65fc49e88ecfd7ce6d47761c/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_40e35dbe65fc49e88ecfd7ce6d47761c/eval/mean_squared_error> .
-
-<http://inter-space.org/learning_model#run_40e35dbe65fc49e88ecfd7ce6d47761c/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "5.017570495605469"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_40e35dbe65fc49e88ecfd7ce6d47761c/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "40.540653228759766"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_4864dcade9064ee4a3d55b11e8c3c77c/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_4864dcade9064ee4a3d55b11e8c3c77c/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_4864dcade9064ee4a3d55b11e8c3c77c/eval/mean_squared_error> .
-
-<http://inter-space.org/learning_model#run_4864dcade9064ee4a3d55b11e8c3c77c/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "13.324183464050293"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_4864dcade9064ee4a3d55b11e8c3c77c/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "328.2415771484375"^^xsd:float .
-
-<http://inter-space.org/learning_model#run_501e44bd6e4e418f9d302cfc2d8c1429/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_501e44bd6e4e418f9d302cfc2d8c1429/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_501e44bd6e4e418f9d302cfc2d8c1429/eval/mean_squared_error> .
-
-<http://inter-space.org/learning_model#run_501e44bd6e4e418f9d302cfc2d8c1429/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+<http://inter-space.org/learning_model#run_139667b5f2484dce9732eb52ca958ae8/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
     mls:hasValue "9.648994445800781"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_501e44bd6e4e418f9d302cfc2d8c1429/eval/mean_squared_error> a mls:MeanSquaredError ;
+<http://inter-space.org/learning_model#run_139667b5f2484dce9732eb52ca958ae8/eval/mean_squared_error> a mls:MeanSquaredError ;
     mls:hasValue "129.43197631835938"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_76f2c2e26b7643eeb557ecfdbedb5694/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_76f2c2e26b7643eeb557ecfdbedb5694/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_76f2c2e26b7643eeb557ecfdbedb5694/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_49c34b42db1d4e098d46fc6cd790da84/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_49c34b42db1d4e098d46fc6cd790da84/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_49c34b42db1d4e098d46fc6cd790da84/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_76f2c2e26b7643eeb557ecfdbedb5694/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "5.65700626373291"^^xsd:float .
+<http://inter-space.org/learning_model#run_49c34b42db1d4e098d46fc6cd790da84/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "5.017570495605469"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_76f2c2e26b7643eeb557ecfdbedb5694/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "52.94618225097656"^^xsd:float .
+<http://inter-space.org/learning_model#run_49c34b42db1d4e098d46fc6cd790da84/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "40.540653228759766"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_81a2068ffb1f4379bf45fd7d2212cc93/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_81a2068ffb1f4379bf45fd7d2212cc93/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_81a2068ffb1f4379bf45fd7d2212cc93/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_4aac1d3e65874dd2935288899c695099/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_4aac1d3e65874dd2935288899c695099/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_4aac1d3e65874dd2935288899c695099/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_81a2068ffb1f4379bf45fd7d2212cc93/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "5.65700626373291"^^xsd:float .
+<http://inter-space.org/learning_model#run_4aac1d3e65874dd2935288899c695099/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "6.6768574714660645"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_81a2068ffb1f4379bf45fd7d2212cc93/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "52.94618225097656"^^xsd:float .
+<http://inter-space.org/learning_model#run_4aac1d3e65874dd2935288899c695099/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "65.63717651367188"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_a3ad8fefbfb348e2a48b2abe4847e7d3/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_a3ad8fefbfb348e2a48b2abe4847e7d3/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_a3ad8fefbfb348e2a48b2abe4847e7d3/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_7be65ff944404a38be97030b6c8c4df7/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_7be65ff944404a38be97030b6c8c4df7/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_7be65ff944404a38be97030b6c8c4df7/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_a3ad8fefbfb348e2a48b2abe4847e7d3/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "9.758745193481445"^^xsd:float .
+<http://inter-space.org/learning_model#run_7be65ff944404a38be97030b6c8c4df7/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "3.7022125720977783"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_a3ad8fefbfb348e2a48b2abe4847e7d3/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "167.99900817871094"^^xsd:float .
+<http://inter-space.org/learning_model#run_7be65ff944404a38be97030b6c8c4df7/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "21.834674835205078"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_cc7821e500334aa2bb9978d8b079fe22/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_cc7821e500334aa2bb9978d8b079fe22/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_cc7821e500334aa2bb9978d8b079fe22/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_842302134b3147a7b92f50838fdb3d3a/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_842302134b3147a7b92f50838fdb3d3a/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_842302134b3147a7b92f50838fdb3d3a/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_cc7821e500334aa2bb9978d8b079fe22/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
-    mls:hasValue "13.404314994812012"^^xsd:float .
+<http://inter-space.org/learning_model#run_842302134b3147a7b92f50838fdb3d3a/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "13.324183464050293"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_cc7821e500334aa2bb9978d8b079fe22/eval/mean_squared_error> a mls:MeanSquaredError ;
-    mls:hasValue "327.7085876464844"^^xsd:float .
+<http://inter-space.org/learning_model#run_842302134b3147a7b92f50838fdb3d3a/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "328.2415771484375"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_e471b669a1af4e84ae56549ae4b8ba3a/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_e471b669a1af4e84ae56549ae4b8ba3a/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_e471b669a1af4e84ae56549ae4b8ba3a/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_bb6331b7c9eb414aa5de41fcb9be3196/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_bb6331b7c9eb414aa5de41fcb9be3196/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_bb6331b7c9eb414aa5de41fcb9be3196/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_e471b669a1af4e84ae56549ae4b8ba3a/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+<http://inter-space.org/learning_model#run_bb6331b7c9eb414aa5de41fcb9be3196/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
     mls:hasValue "5.497774124145508"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_e471b669a1af4e84ae56549ae4b8ba3a/eval/mean_squared_error> a mls:MeanSquaredError ;
+<http://inter-space.org/learning_model#run_bb6331b7c9eb414aa5de41fcb9be3196/eval/mean_squared_error> a mls:MeanSquaredError ;
     mls:hasValue "63.64848709106445"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_f26b6f67f85946959a990e84cfe1ceca/eval> a mls:ModelEvaluation ;
-    mls:specifiedBy <http://inter-space.org/learning_model#run_f26b6f67f85946959a990e84cfe1ceca/eval/mean_absolute_error>,
-        <http://inter-space.org/learning_model#run_f26b6f67f85946959a990e84cfe1ceca/eval/mean_squared_error> .
+<http://inter-space.org/learning_model#run_cf4055c34d284efcb0597d5f3f22df83/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_cf4055c34d284efcb0597d5f3f22df83/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_cf4055c34d284efcb0597d5f3f22df83/eval/mean_squared_error> .
 
-<http://inter-space.org/learning_model#run_f26b6f67f85946959a990e84cfe1ceca/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+<http://inter-space.org/learning_model#run_cf4055c34d284efcb0597d5f3f22df83/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "5.65700626373291"^^xsd:float .
+
+<http://inter-space.org/learning_model#run_cf4055c34d284efcb0597d5f3f22df83/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "52.94618225097656"^^xsd:float .
+
+<http://inter-space.org/learning_model#run_db514276c28b45899ebab1da2d7eedb7/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_db514276c28b45899ebab1da2d7eedb7/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_db514276c28b45899ebab1da2d7eedb7/eval/mean_squared_error> .
+
+<http://inter-space.org/learning_model#run_db514276c28b45899ebab1da2d7eedb7/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "9.758745193481445"^^xsd:float .
+
+<http://inter-space.org/learning_model#run_db514276c28b45899ebab1da2d7eedb7/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "167.99900817871094"^^xsd:float .
+
+<http://inter-space.org/learning_model#run_e7696ac0acbc4bfea8eea5c6457f3f94/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_e7696ac0acbc4bfea8eea5c6457f3f94/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_e7696ac0acbc4bfea8eea5c6457f3f94/eval/mean_squared_error> .
+
+<http://inter-space.org/learning_model#run_e7696ac0acbc4bfea8eea5c6457f3f94/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
+    mls:hasValue "13.404314994812012"^^xsd:float .
+
+<http://inter-space.org/learning_model#run_e7696ac0acbc4bfea8eea5c6457f3f94/eval/mean_squared_error> a mls:MeanSquaredError ;
+    mls:hasValue "327.7085876464844"^^xsd:float .
+
+<http://inter-space.org/learning_model#run_ee0f962e31014329a40c0dee0563df46/eval> a mls:ModelEvaluation ;
+    mls:specifiedBy <http://inter-space.org/learning_model#run_ee0f962e31014329a40c0dee0563df46/eval/mean_absolute_error>,
+        <http://inter-space.org/learning_model#run_ee0f962e31014329a40c0dee0563df46/eval/mean_squared_error> .
+
+<http://inter-space.org/learning_model#run_ee0f962e31014329a40c0dee0563df46/eval/mean_absolute_error> a mls:MeanAbsoluteError ;
     mls:hasValue "4.665645599365234"^^xsd:float .
 
-<http://inter-space.org/learning_model#run_f26b6f67f85946959a990e84cfe1ceca/eval/mean_squared_error> a mls:MeanSquaredError ;
+<http://inter-space.org/learning_model#run_ee0f962e31014329a40c0dee0563df46/eval/mean_squared_error> a mls:MeanSquaredError ;
     mls:hasValue "34.17942810058594"^^xsd:float .
 
 <http://inter-space.org/learning_model#/vavs/1> a brick:VAV ;
@@ -743,14 +737,6 @@ isl:model_b4895793546a4048b0656859e1430349 a mls:Model ;
     dcterms:identifier "model/model_b4895793546a4048b0656859e1430349.h5" ;
     mls:builtOn isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a .
 
-<http://inter-space.org/learning_model#/co2_sensors/1> a brick:CO2_Sensor ;
-    brickframe:hasMeasurement isl:co2_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
-
-<http://inter-space.org/learning_model#/occ_sensors/1> a brick:Occupancy_Sensor ;
-    brickframe:hasMeasurement isl:occupant_count_room_1.csv ;
-    brickframe:isPointOf <http://inter-space.org/learning_model#/rooms/1> .
-
 brick:CO2_Sensor rdfs:label "CO2 Sensor" ;
     rdfs:subClassOf brick:Sensor .
 
@@ -766,12 +752,12 @@ brick:Temperature_Sensor rdfs:label "Temperature Sensor" ;
 <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/co2> a mls:Feature,
         brick:CO2_Level ;
     rdfs:label "Room CO2 Level"^^xsd:string ;
-    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/1> .
+    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/2> .
 
 <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/occupancy> a mls:Feature,
         brick:Occupancy ;
     rdfs:label "Room Occupancy"^^xsd:string ;
-    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/1> .
+    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/2> .
 
 <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/test> a mls:TestDataset ;
     mls:hasQuality <http://inter-space.org/learning_model#49117df88973460f947218e5f0adb18e/test/count> .
@@ -792,24 +778,24 @@ brick:Temperature_Sensor rdfs:label "Temperature Sensor" ;
 <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/co2> a mls:Feature,
         brick:CO2_Level ;
     rdfs:label "Room CO2 Level"^^xsd:string ;
-    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/1> .
+    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/co2_sensors/3> .
 
 <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/occupancy> a mls:Feature,
         brick:Occupancy ;
     rdfs:label "Room Occupancy"^^xsd:string ;
-    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/1> .
+    brickframe:isMeasuredBy <http://inter-space.org/learning_model#/occ_sensors/3> .
 
 isl:model_0754017c705548d490065f71ac4364ee a mls:Model ;
     dcterms:identifier "model/model_0754017c705548d490065f71ac4364ee.h5" .
-
-isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a a mls:Model ;
-    dcterms:identifier "model/model_24e6a2b6b9c64aec9605bc00b2ed3b5a.h5" .
 
 isl:model_cac90a7b1bf147bda94625edc5b339f7 a mls:Model ;
     dcterms:identifier "model/model_cac90a7b1bf147bda94625edc5b339f7.h5" .
 
 <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test> a mls:TestDataset ;
     mls:hasQuality <http://inter-space.org/learning_model#fa639abdd2e940149afd422aab51e5d8/test/count> .
+
+isl:model_24e6a2b6b9c64aec9605bc00b2ed3b5a a mls:Model ;
+    dcterms:identifier "model/model_24e6a2b6b9c64aec9605bc00b2ed3b5a.h5" .
 
 <http://inter-space.org/learning_model#/rooms/1> a brick:Room ;
     isl:hasArea "139.0"^^xsd:float ;
